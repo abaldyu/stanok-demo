@@ -136,7 +136,7 @@ section{padding:80px 0;border-top:1px solid var(--line)}
 .nav-btns .btn{flex:1}
 label{display:grid;gap:6px;font-size:14px;color:var(--ink-2);margin-bottom:12px}
 input{min-height:52px;border-radius:var(--r);border:1px solid var(--line);background:var(--card);color:var(--ink);padding:0 14px;font:inherit;font-size:16px}
-input:focus,.opt:focus-visible,.day:focus-visible,.slot:focus-visible,.btn:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+input:focus,.opt:focus-visible,.cd:focus-visible,.cal-nav:focus-visible,.slot:focus-visible,.btn:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
 .summary{border:1px dashed var(--line);border-radius:var(--r);padding:16px;margin-bottom:16px;font-size:15px;display:grid;gap:4px}
 .summary b{color:var(--ink)}
 .summary span{color:var(--ink-2)}
@@ -453,6 +453,7 @@ mstBox.addEventListener('click', e => {
 document.querySelectorAll('[data-master]').forEach(a => a.addEventListener('click', () => {
   const b = mstBox.querySelector(`[data-id="${a.dataset.master}"]`);
   pick(mstBox, b); state.mst = a.dataset.master; nextBtn(2).disabled = false;
+  state.time = null; nextBtn(3).disabled = true; renderSlots();
   go(state.svc ? 2 : 1);
 }));
 
