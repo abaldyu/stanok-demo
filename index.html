@@ -6,6 +6,18 @@
 <meta name="theme-color" content="#0F0E0D">
 <title>СТАНОК — барбершоп в Петрозаводске</title>
 <meta name="description" content="Мужские стрижки, борода и королевское бритьё. Онлайн-запись к мастеру за минуту.">
+<link rel="canonical" href="https://abaldyu.github.io/stanok-demo/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://abaldyu.github.io/stanok-demo/">
+<meta property="og:title" content="СТАНОК — барбершоп в Петрозаводске">
+<meta property="og:description" content="Мужские стрижки, борода и королевское бритьё. Онлайн-запись к мастеру за минуту.">
+<meta property="og:image" content="https://abaldyu.github.io/stanok-demo/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "HairSalon", "name": "СТАНОК", "description": "Барбершоп: мужские стрижки, борода, королевское бритьё. Онлайн-запись.", "url": "https://abaldyu.github.io/stanok-demo/", "image": "https://abaldyu.github.io/stanok-demo/og.jpg", "telephone": "+7 900 000-00-00", "priceRange": "₽₽", "address": {"@type": "PostalAddress", "streetAddress": "ул. Примерная, 3", "addressLocality": "Петрозаводск", "addressRegion": "Республика Карелия", "addressCountry": "RU"}, "geo": {"@type": "GeoCoordinates", "latitude": 61.787, "longitude": 34.36}, "openingHoursSpecification": [{"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "10:00", "closes": "21:00"}]}</script>
+<script>document.documentElement.classList.add('js')</script>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%230F0E0D%22/%3E%3Cpath d=%22M8 22L22 8M12 24l12-12%22 stroke=%22%23C9A25E%22 stroke-width=%223%22/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -160,8 +172,8 @@ footer{padding:32px 0;color:var(--ink-2);font-size:14px;border-top:1px solid var
 .dock a svg{width:20px;height:20px}
 .dock a.main{background:var(--brass);color:var(--brass-ink)}
 
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
-.reveal.in{opacity:1;transform:none}
+.js .reveal{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.js .reveal.in{opacity:1;transform:none}
 
 @media (min-width:760px){
   body{padding-bottom:0}
@@ -188,6 +200,19 @@ footer{padding:32px 0;color:var(--ink-2);font-size:14px;border-top:1px solid var
   .panel.on{animation:none}
   .btn,.master img{transition:none}
 }
+html,body{overflow-x:clip}
+.faq{display:grid;gap:10px;max-width:820px}
+.faq details{border:1px solid var(--line);border-radius:var(--r);background:var(--card)}
+.faq summary{cursor:pointer;list-style:none;padding:18px 52px 18px 20px;font-weight:700;position:relative;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:20px;top:50%;transform:translateY(-50%);font-size:24px;line-height:1;color:var(--brass);transition:transform .2s}
+.faq details[open] summary::after{transform:translateY(-50%) rotate(45deg)}
+.faq summary:focus-visible{outline:2px solid var(--brass);outline-offset:2px}
+.faq details p{padding:0 20px 18px;color:var(--ink-2)}
+label.consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;line-height:1.45;color:var(--ink-2);margin:4px 0 14px;cursor:pointer}
+label.consent input{min-height:0;width:20px;height:20px;flex:none;margin-top:1px;accent-color:var(--brass);padding:0}
+label.consent a{color:inherit}
+label.consent.err{color:#E5484D}
 </style>
 </head>
 <body>
@@ -278,6 +303,7 @@ footer{padding:32px 0;color:var(--ink-2);font-size:14px;border-top:1px solid var
         <form id="contact-form" novalidate>
           <label>Имя<input name="name" autocomplete="given-name" placeholder="Как к вам обращаться" required></label>
           <label>Телефон<input name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00" required></label>
+          <label class="consent"><input type="checkbox" name="consent" required> <span>Согласен на обработку персональных данных по <a href="privacy.html" target="_blank">политике конфиденциальности</a></span></label>
           <div class="nav-btns"><button type="button" class="btn btn-line" data-prev>Назад</button><button class="btn btn-brass" type="submit">Записаться</button></div>
         </form>
       </div>
@@ -320,6 +346,19 @@ footer{padding:32px 0;color:var(--ink-2);font-size:14px;border-top:1px solid var
   </div>
 </section>
 
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal"><h2>Частые вопросы</h2></div>
+    <div class="faq reveal">
+      <details><summary>Можно прийти без записи?</summary><p>Можно, если мастер свободен. Надёжнее записаться онлайн — это минута.</p></details>
+      <details><summary>Сколько длится стрижка?</summary><p>Мужская стрижка — около часа, комплекс со стрижкой бороды — полтора.</p></details>
+      <details><summary>Стрижёте детей?</summary><p>Да, мальчиков с 7 лет. Можно записаться вместе с папой на соседние кресла.</p></details>
+      <details><summary>Как перенести или отменить запись?</summary><p>Позвоните или напишите в Telegram хотя бы за 2 часа — перенесём без проблем.</p></details>
+      <details><summary>Есть подарочные сертификаты?</summary><p>Да, на любую сумму или услугу. Оформим в барбершопе за пару минут.</p></details>
+    </div>
+  </div>
+</section>
+
 <section id="contacts">
   <div class="wrap contacts">
     <div class="reveal">
@@ -337,7 +376,7 @@ footer{padding:32px 0;color:var(--ink-2);font-size:14px;border-top:1px solid var
 </main>
 
 <footer>
-  <div class="wrap">© 2026 Барбершоп «СТАНОК», Петрозаводск. Демо-макет: заведение вымышленное, фото — Unsplash.</div>
+  <div class="wrap">© 2026 Барбершоп «СТАНОК», Петрозаводск. Демо-макет: заведение вымышленное, фото — Unsplash. <a href="privacy.html">Политика конфиденциальности</a></div>
 </footer>
 
 <nav class="dock" aria-label="Быстрые действия">
@@ -511,11 +550,13 @@ function renderSummary() {
      <div><span>Когда:</span> <b>${fmtDay(state.day)}, ${state.time}</b></div>
      <div><span>Стоимость:</span> <b>${rub(total())}</b></div>`;
 }
+document.getElementById('contact-form').consent.addEventListener('change', e => e.target.closest('label').classList.remove('err'));
 document.getElementById('contact-form').addEventListener('submit', e => {
   e.preventDefault();
   const f = e.target;
   if (!f.name.value.trim()) return f.name.focus();
   if (f.phone.value.replace(/\D/g, '').length < 10) return f.phone.focus();
+  if (!f.consent.checked) { f.consent.closest('label').classList.add('err'); return f.consent.focus(); }
   const m = masterOf();
   document.getElementById('done-text').textContent =
     `${f.name.value.trim()}, ждём вас ${fmtDay(state.day)} в ${state.time}${m ? ' у мастера ' + m.gen : ''}. ${state.svc.name}, ${rub(total())}.`;

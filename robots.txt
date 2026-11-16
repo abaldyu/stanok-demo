@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://abaldyu.github.io/stanok-demo/sitemap.xml
